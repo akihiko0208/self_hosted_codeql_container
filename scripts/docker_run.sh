@@ -1,6 +1,6 @@
 #!/bin/bash
 IMGNAME=self_hosted_codeql_container
-VERSION=0.1
+VERSION=0.2
 
 # URL=https://github.com/akihiko0208/test
 # TOKEN=AFHUBCWS6XYAT7MYIO5BFBDAWZN4S

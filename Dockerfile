@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 # Install packages
 RUN apt-get update \
- && apt-get install -y language-pack-ja sudo curl \
+ && apt-get install -y language-pack-ja sudo curl wget \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -31,6 +31,11 @@ RUN cd actions-runner \
  && ./bin/installdependencies.sh \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+
+# Adding the CodeQL runnner
+RUN wget https://github.com/github/codeql-action/releases/latest/download/codeql-runner-linux \
+ && chmod a+x codeql-runner-linux \
+ && mv codeql-runner-linux /usr/local/bin
 
 USER runner
 COPY init.sh /home/runner/init.sh
