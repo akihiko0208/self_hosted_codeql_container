@@ -25,7 +25,7 @@ RUN mkdir actions-runner \
  && tar xzf ./actions-runner-linux-x64-2.278.0.tar.gz \
  && rm ./actions-runner-linux-x64-2.278.0.tar.gz
 
-# Install dependencies
+# Install dependencies for actions-runner
 USER root
 RUN cd actions-runner \
  && ./bin/installdependencies.sh \
