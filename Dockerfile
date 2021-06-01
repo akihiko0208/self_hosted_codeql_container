@@ -32,10 +32,11 @@ RUN cd actions-runner \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-# Adding the CodeQL runnner
-RUN wget https://github.com/github/codeql-action/releases/latest/download/codeql-runner-linux \
- && chmod a+x codeql-runner-linux \
- && mv codeql-runner-linux /usr/local/bin
+# Adding the CodeQL
+RUN cd actions-runner \
+ && mkdir github \
+ && cd github \
+ && git clone https://github.com/github/codeql-action.git
 
 USER runner
 COPY init.sh /home/runner/init.sh
