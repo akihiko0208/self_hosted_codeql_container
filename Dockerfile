@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 # Install packages
 RUN apt-get update \
- && apt-get install -y language-pack-ja sudo curl wget \
+ && apt-get install -y language-pack-ja sudo curl wget git \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
