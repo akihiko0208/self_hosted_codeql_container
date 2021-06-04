@@ -32,12 +32,6 @@ RUN cd actions-runner \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-# Adding the CodeQL
-RUN cd actions-runner \
- && mkdir github \
- && cd github \
- && git clone https://github.com/github/codeql-action.git
-
 USER runner
 COPY init.sh /home/runner/init.sh
 CMD [ "./init.sh" ]
