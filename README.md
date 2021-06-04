@@ -1,4 +1,4 @@
-# self_hosted_codeql_container
+# self_hosted_runner_container
 
 ## HOWTO BUILD
 
